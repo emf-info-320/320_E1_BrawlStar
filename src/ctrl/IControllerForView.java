@@ -1,6 +1,6 @@
 package ctrl;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import models.Rarete;
 
@@ -20,6 +20,11 @@ public interface IControllerForView {
      * Méthode qui déclenche l'indexation des données
      */
     void indexer();
+
+    /**
+     * Méthode déclenchée lors du clic sur le bouton du rapido 0
+     */
+    void onRapido0Click();
 
     /**
      * Méthode déclenchée lors du clic sur le bouton du rapido 1
@@ -49,7 +54,7 @@ public interface IControllerForView {
      * 
      * @return la liste de toutes les rareté triée par ordre croissant de l'id
      */
-    ArrayList<Rarete> getRapido4List();
+    List<Rarete> getRapido4List();
 
     /**
      * Méthode déclenchée lors du clic sur le bouton du rapido 5

@@ -6,13 +6,13 @@
 
  Objectifs spécifiques:
 
-- Comprendre l'utilité et les fonctionnalités de l'application présentée
-- Comprendre et respecter l'architecture MVC
-- Implémenter avec l'utilisation des principes POO (interface, héritage, ...)
-- Compléter le code manquant par la lecture des schémas UML et de la javadoc fournis.
+- Comprendre l'utilité et les fonctionnalités de l'application présentée.
+- Comprendre et respecter l'architecture MVC.
+- Implémenter en utilisant les principes POO (interface, héritage, ...)
+- Compléter le code manquant en se basant sur les schémas UML et la Javadoc fournis.
 - Résoudre des problématiques de tri et d'indexation grâce aux structures de données dynamiques.
-- Documenter certaines parties du code avec la javadoc
-- Tester l'application avec des tests unitaires
+- Documenter certaines parties du code avec la Javadoc.
+- Tester l'application avec des tests unitaires.
 
 ## Durée
 
@@ -20,49 +20,125 @@
 
 ## Fonctionnalités de l'application
 
-L'application "BrawlStar Database" est une application demandée par un groupe de joueurs passionnés pour améliorer leur utilisation des différents brawler dans le jeu mobile BrawlStar.
+L'application "BrawlStar Database" est une application demandée par un groupe de joueurs passionnés pour améliorer leur utilisation des différents brawler dans le jeu mobile Brawl Stars.
 
-Le jeu BrawlStar est un jeu mobile joueur contre joueur ou équipe contre équipe dans lequel le joueur incarne un "Brawler" (Personnage dans le jeu) pour combattre les autres personnages. Des événements sont aussi organisés dans le jeu et des statistique par événements pour chaque brawler sont tenu, tel que le taux de victoire du brawler et le taux d'utilisation de ce brawler.
+Le jeu BrawlStar est un jeu mobile joueur contre joueur ou équipe contre équipe dans lequel le joueur incarne un "Brawler" (Personnage dans le jeu) pour combattre les autres personnages. Des événements sont aussi organisés dans le jeu et des statistiques par événements pour chaque brawler sont tenues, tels que le taux de victoire du brawler et le taux d'utilisation de ce brawler.
 
 
 <img src="ressourcesDonnee/application.png" width="800">
 
-Pour commencer à utiliser l'application, il faut cliquer sur le bouton "Importer" qui permettra à l'application de lire les fichiers JSON contenant les différentes informations du jeu. Cette action active le bouton "Indexer".
+Pour commencer à utiliser l'application, il faut cliquer sur le bouton "Importer" qui permettra à l'application de lire les fichiers JSON contenant les différentes informations du jeu. Cette action active le bouton `Indexer`.
 
-Quand l'utilisateur clique sur le bouton indexer, les données sont traitée pour être préparée à répondre rapidement aux 5 questions liées au différents boutons sur la zone de droite. C'est aussi à ce moment que la liste déroulante du "rapido4" est remplie avec toutes les rareté des brawlers.
+Quand l'utilisateur clique sur le bouton `Indexer`, les données sont traitées pour être préparées à répondre rapidement aux 5 questions liées aux différents boutons sur la zone de droite. C'est aussi à ce moment que la liste déroulante du "Rapido4" est remplie avec toutes les raretés des brawlers.
 
+### 0) Nombre d'éléments de jeu qui ont été importés et indexés 
+Doit donner le nombre d'éléments de jeu qui ont été importé et indexé.
+```console
+95
+```
 ### 1) Lister tous les brawlers
-Doit produire la liste de tous les brawlers qui ont été importé dans l'application. Cette liste est triée par rareté (id de la rareté) puis par le nom du brawler
-
+Doit produire la liste de tous les brawlers qui ont été importés dans l'application. Cette liste est triée par rareté (id de la rareté) puis par le nom du brawler
+```console
+Shelly (C) 
+Barley (R) 
+Brock (R) 
+Bull (R) 
+Colt (R) 
+El Primo (R) 
+Nita (R) 
+Poco (R) 
+Rosa (R) 
+8-Bit (S) 
+Carl (S) 
+.
+.
+.
+Leon (L) 
+Meg (L) 
+Sandy (L) 
+Spike (L) 
+Surge (L) 
+```
 ### 2) Lister toutes les classes
-Chaque brawler est défini par une classes. Il faut lister toutes les classes présentes sans doublons par ordre alphabétique.
-
+Chaque brawler est défini par une classe. Il faut lister toutes les classes présentes sans doublons, par ordre alphabétique.
+```console
+Artillery
+Assassin
+Controller
+Damage Dealer
+Marksman
+Support
+Tank
+```
 ### 3) Lister tous les events
-Des évènements sont aussi importé dans l'application. Il faut les lister dans l'ordre chronologique de la date de départ de l'évènement.
+Des évènements sont aussi importés dans l'application. Il faut les lister dans l'ordre chronologique de la date de départ de l'événement.
+```console
+Daily Trophy Modes début le : 	02/06/2024 (16:00)
+Daily Trophy Modes début le : 	02/06/2024 (16:00)
+Daily Showdown début le : 	    02/06/2024 (22:00)
+Daily Showdown début le : 	    02/06/2024 (22:00)
+Daily Brawl Ball début le : 	03/06/2024 (04:00)
+Daily Gem Grab début le : 	    03/06/2024 (10:00)
+Daily Special Mode début le : 	03/06/2024 (10:00)
+Daily Basket Brawl début le : 	03/06/2024 (10:00)
+Daily Trophy Modes début le : 	03/06/2024 (16:00)
+Daily Trophy Modes début le : 	03/06/2024 (16:00)
+Daily Showdown début le : 	    03/06/2024 (22:00)
+Daily Showdown début le : 	    03/06/2024 (22:00)
+Daily Brawl Ball début le : 	04/06/2024 (04:00)
+Daily Special Mode début le : 	04/06/2024 (10:00)
+Daily Gem Grab début le : 	    04/06/2024 (10:00)
+```
 
-### 4) Lister les brawler en fonction de la rareté
-Il faut produire la liste des brawlers, mais uniquement de la rareté sélectionnée dans la liste déroulante, dans l'ordre alphabétique.
+### 4) Lister les brawlers en fonction de la rareté
+Il faut produire la liste des brawlers, mais uniquement ceux de la rareté sélectionnée dans la liste déroulante, dans l'ordre alphabétique.
 
-### 5) Brawler ayant le plus souvent +50% de victoire
-Pour chaque évènements, des statistiques sont faite disant quel pourcentage un certain brawler est utilisé et à quel pourcentage ce même brawler a eu des victoires. Il faut donner le nom du brawler ayant le plus souvent (durant le plus d'évènement) un pourcentage de victoire plus grand que 50%. Il n'y a qu'un seul brawler qui correspond a cette description.
+Sortie de la console si la rareté `Legendary` est sélectionnée:
+```console
+Amber (L) 
+Chester (L) 
+Cordelius (L) 
+Crow (L) 
+Draco (L) 
+Kit (L) 
+Leon (L) 
+Meg (L) 
+Sandy (L) 
+Spike (L) 
+Surge (L) 
+```
+
+### 5) Nombre d'évènements par mode de jeu
+Chaque évènment a un mode de jeu, il faut donc retourner le nombre d'évènement par mode de jeu, dans l'ordre du plus petit nombre au plus grand uniquement.
+```console
+1 événement(s) pour le mode : Heist
+1 événement(s) pour le mode : Hot Zone
+1 événement(s) pour le mode : Knockout
+1 événement(s) pour le mode : Wipeout
+2 événement(s) pour le mode : Duo Showdown
+2 événement(s) pour le mode : Gem Grab
+2 événement(s) pour le mode : Knockout 5v5
+2 événement(s) pour le mode : Solo Showdown
+3 événement(s) pour le mode : Brawl Ball
+```
 
 ## Organisation de votre travail
 
 Vous devez en premier lieu bien comprendre le contexte de l'application et les fonctionnalités. 
 
-Ensuite, à l'aide la documentation ci-dessous, du code et de la javadoc fournis, **vous identifiez qu'elle partie du code vous devez produire afin d'offrir à l'utilisateur toutes ces fonctionnalités**
+Ensuite, à l'aide de la documentation ci-dessous, du code et de la Javadoc fournis, **vous identifiez quelle partie du code vous devez produire afin d'offrir à l'utilisateur toutes ces fonctionnalités**
 
-Le choix de l'ordre dans lequel vous effectuerez votre travail fait partie de vos compétences. Cependant, afin vous aider nous vous fournissons une proposition chronologique du travail à effectuer, à la fin de ce document.
+Le choix de l'ordre dans lequel vous effectuerez votre travail fait partie de vos compétences. Cependant, afin vous aider, nous vous fournissons une proposition chronologique du travail à effectuer, à la fin de ce document.
 
-N'oubliez pas les points concernant la javadoc et les tests à la fin de ce document.
+N'oubliez pas les points concernant la Javadoc et les tests à la fin de ce document.
 
 Essayez néanmoins d'obtenir rapidement une application compilable, afin de pouvoir ensuite travailler pas à pas.
 
-Toute la partie qui concerne directement l'affichage (view.fxml et view.java) et déjà réalisée et ne doit pas être modifiée.
+Toute la partie qui concerne directement l'affichage (view.fxml et view.java) est déjà réalisée et ne doit pas être modifiée.
 
 ## Architecture du projet (packages)
 
-Pour savoir où créer les classes du projet, voici une vue d'ensemble des packages du projet Java et leur contenu :
+Pour savoir où créer les classes du projet, voici une vue d'ensemble des packages du projet Java et de leur contenu :
 
 ```mermaid
 classDiagram
@@ -113,10 +189,11 @@ classDiagram
         +start() void
         +importation() void
         +indexer() void
+        +onRapido0Click() void
         +onRapido1Click() void
         +onRapido2Click() void
         +onRapido3Click() void
-        +getRapido4List() ArrayList< Rarete >
+        +getRapido4List() List< Rarete >
         +onRapido4Click(Rarete rarete) void
         +onRapido5Click() void
 
@@ -137,7 +214,7 @@ classDiagram
         onRapido1Click() void
         onRapido2Click() void
         onRapido3Click() void
-        getRapido4List() ArrayList< Rarete >
+        getRapido4List() List< Rarete >
         onRapido4Click(Rarete rarete) void
         onRapido5Click() void
     }
@@ -163,14 +240,13 @@ classDiagram
 
 ### Service des date
 
-Vous devez compléter les méthodes du service ci-dessous à l'aide de la javadoc fournie.
+Vous devez compléter les méthodes du service ci-dessous à l'aide du chapitre Javadoc ci-dessous.
 
 ```mermaid
 classDiagram
 
-
-
     class ServiceDate  {
+        - simpleDateFormat : SimpleDateFormat
         + ServiceDate()
         + formaterDate(Date date) String
     }
@@ -192,8 +268,8 @@ classDiagram
     class ServiceImportation   {
         
         + ServiceImportation()
-        + importerBrawlers() ArrayList < Brawler >
-        + importerEvenements() ArrayList < Evenement >
+        + importerBrawlers() List < Brawler >
+        + importerEvenements() List < Evenement >
     }
 
 
@@ -201,7 +277,7 @@ classDiagram
 
 ### Service d'indexation
 
-Vous devez compléter les méthodes du service ci-dessous à l'aide de la javadoc fournie.
+Vous devez compléter les méthodes du service ci-dessous à l'aide de la Javadoc fournie.
 
 ```mermaid
 classDiagram
@@ -210,14 +286,15 @@ classDiagram
     class ServiceIndexation    {
         +ServiceIndexation()
         +avantIndexation() void
-        +indexation(ArrayList < ElementDeJeu > elements) void
+        +indexation(List < ElementDeJeu > elements) void
         +apresIndexation() void 
-        +rapido1_ListeBrawlers() ArrayList < Brawler >
-        +rapido2_ListeDesClasses() ArrayList < String >
-        +rapido3_TousLesEvenements() ArrayList < Evenement >
-        +getRapido4List_RareteDuBrawler() ArrayList < Rarete >
-        +rapido4_brawlerParRarete(String nomDeLaRarete) ArrayList < Brawler >
-        +rapido5_BrawlerPlus50Victoire() Brawler
+        +rapido0_NombreElements() : int
+        +rapido1_ListeBrawlers() List < Brawler >
+        +rapido2_ListeDesClasses() List < String >
+        +rapido3_TousLesEvenements() List < Evenement >
+        +getRapido4List_RareteDuBrawler() List < Rarete >
+        +rapido4_brawlerParRarete(String nomDeLaRarete) List < Brawler >
+        +rapido5_NombreEvenementParModeDeJeu() List < String >
     }
 
 ```
@@ -225,8 +302,8 @@ classDiagram
 
 ### Les models
 
-Voici le diagramme des classes des différentes classes présentent dans le package models.
-Pour ce qui est de l'implémentation des différentes méthodes, veuillez vous référer à la JavaDoc.
+Voici le diagramme des classes des différentes classes présentes dans le package models.
+Pour ce qui est de l'implémentation des différentes méthodes, veuillez vous référer à la Javadoc.
 
 ```mermaid
 classDiagram
@@ -257,11 +334,13 @@ classDiagram
         -dateFin : Date
         -serviceDate : ServiceDate
         -statistiques : ArrayList < Statistique >
+        -modeDeJeu : String
 
-        +Evenement(int id, String nom, Date dateDebut, Date dateFin, ArrayList<Statistique> statistiques)
+        +Evenement(int id, String nom, Date dateDebut, Date dateFin, ArrayList < Statistique > statistiques, String modeDeJeu, ServiceDate serviceDate)
         +getDateDebut() Date
         +getDateFin() Date
         +getStatistiques() ArrayList < Statistique >
+        +getModeDeJeu String
         +compareTo(Evenement evenement) int
         +toString() String
     }
@@ -315,6 +394,23 @@ sequenceDiagram
 
 ### Détail de la classe `Controller`
 
+#### Constructeur
+```mermaid
+sequenceDiagram
+
+    create participant View
+    Controller->>View: new View(this)
+
+    create participant ServiceImportation
+    Controller->>ServiceImportation: new ServiceImportation()
+
+    create participant ServiceIndexation
+    Controller->>ServiceIndexation: new ServiceIndexation()
+
+    create participant List
+    Controller->>List: new List < ElementDeJeu >
+```
+
 #### Méthode `start()`
 
 ```mermaid
@@ -328,35 +424,35 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-    importation()->>+ElementDeJeu:clear()
-    ElementDeJeu-->-importation():void
-    importation()->>+ServiceImportation:importerBrawlers()
-    ServiceImportation-->>-importation():brawlers
-    importation()->>+ElementDeJeu:addAll(brawlers)
-    importation()->>+ServiceImportation:importerEvenements()
-    ServiceImportation-->>-importation():evenements
-    importation()->>+ElementDeJeu:addAll(evenements)
+    importation()->>+elementsDeJeu:clear()
+    elementsDeJeu-->-importation():void
+    importation()->>+serviceImportation:importerBrawlers()
+    serviceImportation-->>-importation():brawlers
+    importation()->>+elementsDeJeu:addAll(brawlers)
+    importation()->>+serviceImportation:importerEvenements()
+    serviceImportation-->>-importation():evenements
+    importation()->>+elementsDeJeu:addAll(evenements)
 
 ```
 
 #### Méthode `indexer()`
 ```mermaid
 sequenceDiagram
-    indexer()->>+ServiceIndexation:avantIndexation()
-    ServiceIndexation-->>-indexer(): 
+    indexer()->>+serviceIndexation:avantIndexation()
+    serviceIndexation-->>-indexer(): 
 
-    indexer()->>+ServiceIndexation:indexation(elementsDeJeu)
-    ServiceIndexation-->>-indexer(): 
+    indexer()->>+serviceIndexation:indexation(elementsDeJeu)
+    serviceIndexation-->>-indexer(): 
 
-    indexer()->>+ServiceIndexation:apresIndexation()
-    ServiceIndexation-->>-indexer(): 
+    indexer()->>+serviceIndexation:apresIndexation()
+    serviceIndexation-->>-indexer(): 
 ```
 
 #### Méthode `onRapido1Click()`
 ```mermaid
 sequenceDiagram
-    onRapido1Click()->>+ServiceIndexation:rapido1_ListeBrawlers()
-    ServiceIndexation-->>-onRapido1Click(): brawlers
+    onRapido1Click()->>+serviceIndexation:rapido1_ListeBrawlers()
+    serviceIndexation-->>-onRapido1Click(): brawlers
 
     onRapido1Click()->>onRapido1Click():String rapport = "";
 
@@ -364,14 +460,14 @@ sequenceDiagram
         onRapido1Click()->>onRapido1Click():rapport += brawler + "\n"
     end
 
-    onRapido1Click()->>+View:afficheRapport(rapport)
+    onRapido1Click()->>+view:afficheRapport(rapport)
 ```
 
 #### Méthode `onRapido2Click()`
 ```mermaid
 sequenceDiagram
-    onRapido2Click()->>+ServiceIndexation:rapido2_ListeDesClasses()
-    ServiceIndexation-->>-onRapido2Click(): classes
+    onRapido2Click()->>+serviceIndexation:rapido2_ListeDesClasses()
+    serviceIndexation-->>-onRapido2Click(): classes
 
     onRapido2Click()->>onRapido2Click():String rapport = "";
 
@@ -379,14 +475,14 @@ sequenceDiagram
         onRapido2Click()->>onRapido2Click():rapport += classe + "\n"
     end
 
-    onRapido2Click()->>+View:afficheRapport(rapport)
+    onRapido2Click()->>+view:afficheRapport(rapport)
 ```
 
 #### Méthode `onRapido3Click()`
 ```mermaid
 sequenceDiagram
-    onRapido3Click()->>+ServiceIndexation:rapido3_TousLesEvenements()
-    ServiceIndexation-->>-onRapido3Click(): evenements
+    onRapido3Click()->>+serviceIndexation:rapido3_TousLesEvenements()
+    serviceIndexation-->>-onRapido3Click(): evenements
 
     onRapido3Click()->>onRapido3Click():String rapport = "";
 
@@ -394,22 +490,22 @@ sequenceDiagram
         onRapido3Click()->>onRapido3Click():rapport += evenement + "\n"
     end
 
-    onRapido3Click()->>+View:afficheRapport(rapport)
+    onRapido3Click()->>+view:afficheRapport(rapport)
 ```
 
 #### Méthode `getRapido4List()`
 ```mermaid
 sequenceDiagram
-    getRapido4List()->>+ServiceIndexation:getRapido4List_RareteDuBrawler()
-    ServiceIndexation-->>-getRapido4List(): raretes
+    getRapido4List()->>+serviceIndexation:getRapido4List_RareteDuBrawler()
+    serviceIndexation-->>-getRapido4List(): raretes
 
 ```
 
 #### Méthode `onRapido4Click(Rarete rarete)`
 ```mermaid
 sequenceDiagram
-    onRapido4Click(Rarete rarete)->>+ServiceIndexation:rapido4_brawlerParRarete(rarete.getNom())
-    ServiceIndexation-->>-onRapido4Click(Rarete rarete): brawlerDeLaRarete
+    onRapido4Click(Rarete rarete)->>+serviceIndexation:rapido4_brawlerParRarete(rarete.getNom())
+    serviceIndexation-->>-onRapido4Click(Rarete rarete): brawlerDeLaRarete
 
     onRapido4Click(Rarete rarete)->>onRapido4Click(Rarete rarete):String rapport = "";
 
@@ -417,61 +513,57 @@ sequenceDiagram
         onRapido4Click(Rarete rarete)->>onRapido4Click(Rarete rarete):rapport += brawlerDeLaRarete + "\n"
     end
 
-    onRapido4Click(Rarete rarete)->>+View:afficheRapport(rapport)
+    onRapido4Click(Rarete rarete)->>+view:afficheRapport(rapport)
 ```
 
-#### Méthode `getRapido5List()`
+#### Méthode `onRapido5Click()`
 ```mermaid
 sequenceDiagram
-    getRapido5List()->>+ServiceIndexation:rapido5_BrawlerPlus50Victoire()
-    ServiceIndexation-->>-getRapido5List(): brawler
-    getRapido5List()->>+View:afficheRapport(brawler)
+    onRapido5Click()->>+serviceIndexation:rapido5_NombreEvenementParModeDeJeu()
+    serviceIndexation-->>-onRapido5Click(): eventsParMode
 
+    onRapido5Click()->>onRapido5Click():String eventParModeString = "";
+
+    loop eventParMode in eventsParMode
+        onRapido5Click()->>onRapido5Click():eventParModeString += eventParMode + "\n"
+    end
+
+    onRapido5Click()->>+view:afficheRapport(eventParModeString)
 ```
 
 ## Javadoc
 
-Le service `ServiceDate` possède une méthode `formatageDeLaDate` en plus de son constructeur.
+Le service `ServiceDate` possède une méthode `formaterDate` en plus de son constructeur.
 
-Vous devez transformer le cahier des charge ci-dessous en Javadoc.
+Vous devez transformer le cahier des charges ci-dessous en Javadoc.
 
-Voici le cahier des charge de cette méthode: 
+Voici le cahier des charge de cette méthode : 
 
-Le constructeur doit initialiser les attributs de la classe.
+Le constructeur doit initialiser les attributs de la classe. Et le pattern du formatage doit y être défini.
 
-Le formatage de la date doit être fait comme ceci:
-Le jour et le mois séparé par un "/" et sur 2 caractères. L'année qui est sur 4 caractères est aussi séparé du jour et du mois par un "/". Il faut mettre les heures et les minutes sur 2 caractères et ils sont séparé par ":". L'heure et la date sont entre parenthèse.
+Le formatage de la date doit être fait comme ceci :
+Le jour et le mois séparés par un "/" et sur 2 caractères. L'année qui est sur 4 caractères est aussi séparée du jour et du mois par un "/". Il faut mettre les heures et les minutes sur 2 caractères et ils sont séparés par ":". L'heure et la date sont entre parenthèses.
 
-La méthode `formatageDeLaDate` doit recevoir une `Date` en paramètres. Si celui-ci est null alors la méthode doit retourner une string vide sinon elle retourne la date formatée.
+La méthode `formaterDate` doit recevoir une `Date` en paramètres. Si celle-ci est null alors la méthode doit retourner une chaîne de characters vide; sinon, elle retourne la date formatée.
 
-- Vous re-générez ensuite la javadoc pour le projet complet.
+- Vous re-générez ensuite la Javadoc pour le projet complet.
 
 ## Tests unitaires
 
-  -  Sur la base de votre Javadoc écrite selon le paragraphe précédent, vous codez la méthode  `formatageDeLaDate`.
+  -  Sur la base de votre Javadoc écrite selon le paragraphe précédent, vous codez la méthode  `formaterDate`.
 
    - Ensuite vous mettez en place un test unitaire, avec tous les pas de test nécessaires selon la théorie vue durant le module.
-   - Vous exécutez ensuite ces tests unitaires et corrigez si besoin votre code en fonction des résultats des tests.
+   - Vous exécutez ensuite ces tests unitaires et corrigez, si besoin, votre code en fonction des résultats des tests.
   
-
-
-
- 
 
 # Proposition chronologique des tâches à effectuer
 
 Ceci est une proposition parmi d'autres solutions possibles.
 
--	Classe Application pour faire le main()
--	Service de formatage des dates
--	Classes ObservationBase et Observation
--	Classes Espece et EspeceDetail
--	Service de chargement des espèces
--	Service de tri des espèces
+-	Les classes du package models
 -	Classe Controller
--	Service de journal des observations
--	Service d'indexation des especes
--	Service d'indexation des observations
+-	Classe Application pour coder la méthode main()
+-	Les services, en terminant par le service d'indexation
 -	Javadoc
 -	Tests unitaires
 
@@ -481,8 +573,8 @@ Ceci est une proposition parmi d'autres solutions possibles.
 | Note | Explications |
 | :----: | :---- |
 | **1** | **`Pas rendu / tricherie`** |
-| **2** | **`Loin d'être suffisant`**<br>Le travail rendu mets en évidence de **nombreuses et profondes lacunes**. |
-| **3** | **`Insuffisant`**<br>Le travail rendu mets en évidence des **difficultés/lacunes qu'il faut encore résoudre** pour atteindre le minimum syndical. |
-| **4** | **`Suffisant`**<br>Le travail rendu démontre que le **minimum requis est atteint** (compréhension et capacité de mettre en oeuvre correctement).<br>Le travail rendu démontre également qu'il subsiste un **manque d'aisance** et que **plusieurs petites et moins petites erreurs ont été commises**. |
-| **5** | **`Bien`**<br>Le **travail rendu est bon** tant au niveau compréhension que capacité de mettre en oeuvre correctement.<br>**Trop de petites et moins petites erreurs ont cependant été commises**. |
-| **6** | **`Très bien`**<br>Le **travail rendu est excellent** et de grande qualité tant au niveau compréhension que capacité de mettre en oeuvre correctement.<br>**BRAVO !!!** |
+| **2** | **`Loin d'être suffisant`**<br>Le travail rendu met en évidence de **nombreuses et profondes lacunes**. |
+| **3** | **`Insuffisant`**<br>Le travail rendu met en évidence des **difficultés/lacunes qu'il faut encore résoudre** pour atteindre le minimum syndical. |
+| **4** | **`Suffisant`**<br>Le travail rendu démontre que le **minimum requis est atteint** (compréhension et capacité de mise en œuvre correcte).<br>Le travail rendu démontre également qu'il subsiste un **manque d'aisance** et que **plusieurs petites et moins petites erreurs ont été commises**. |
+| **5** | **`Bien`**<br>Le **travail rendu est bon** tant au niveau de la compréhension que capacité de mise en œuvre correcte.<br>**Trop de petites et moins petites erreurs ont cependant été commises**. |
+| **6** | **`Très bien`**<br>Le **travail rendu est excellent** et de grande qualité tant au niveau de la compréhension que capacité de mise en œuvre correcte.<br>**BRAVO !!!** |

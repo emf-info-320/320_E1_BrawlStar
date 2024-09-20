@@ -33,6 +33,9 @@ public class View implements IViewForController, Initializable {
     private Button btnIndexer;
 
     @FXML
+    private Button btnRapido0;
+
+    @FXML
     private Button btnRapido1;
 
     @FXML
@@ -101,6 +104,7 @@ public class View implements IViewForController, Initializable {
     @FXML
     void onIndexer(ActionEvent event) {
         controller.indexer();
+        btnRapido0.setDisable(false);
         btnRapido1.setDisable(false);
         btnRapido2.setDisable(false);
         btnRapido3.setDisable(false);
@@ -111,6 +115,11 @@ public class View implements IViewForController, Initializable {
         cbxRapido4.getItems().addAll(controller.getRapido4List());
         cbxRapido4.getSelectionModel().selectFirst();
 
+    }
+
+    @FXML
+    void onRapido0(ActionEvent event) {
+        controller.onRapido0Click();
     }
 
     @FXML

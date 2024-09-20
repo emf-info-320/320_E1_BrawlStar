@@ -3633,14 +3633,14 @@
                 "imageUrl": "https://cdn-old.brawlify.com/gamemode/header/Knockout.png"
             },
             "gameMode": {
-                "id": 17,
-                "name": "Knockout",
-                "hash": "Knockout",
+                "id": 7,
+                "name": "Brawl Ball",
+                "hash": "Brawl-Ball",
                 "version": 1,
-                "color": "#fd9b0e",
-                "bgColor": "#f7831c",
-                "link": "https://brawlify.com/gamemodes/detail/Knockout",
-                "imageUrl": "https://cdn-old.brawlify.com/gamemode/Knockout.png"
+                "color": "#9ab1fd",
+                "bgColor": "#8ca0e0",
+                "link": "https://brawlify.com/gamemodes/detail/Brawl-Ball",
+                "imageUrl": "https://cdn-old.brawlify.com/gamemode/Brawl-Ball.png"
             },
             "lastActive": 1717423200,
             "dataUpdated": 1717423200,

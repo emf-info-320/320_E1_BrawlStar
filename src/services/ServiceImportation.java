@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -48,7 +49,7 @@ public class ServiceImportation {
      * 
      * @return Une liste contenant tous les brawler du jeu.
      */
-    public ArrayList<Brawler> importerBrawlers() {
+    public List<Brawler> importerBrawlers() {
         Path resourcesPath = Paths.get(PATH_BASE);
         ArrayList<Brawler> brawlers = new ArrayList<Brawler>();
 
@@ -88,9 +89,10 @@ public class ServiceImportation {
      * 
      * @return Une liste contenant tous les événements du jeu.
      */
-    public ArrayList<Evenement> importerEvenements() {
+    public List<Evenement> importerEvenements() {
         Path resourcesPath = Paths.get(PATH_BASE);
         ArrayList<Evenement> events = new ArrayList<Evenement>();
+        ServiceDate serviceDate = new ServiceDate();
 
         // Lecture des Brawlers
         try (FileReader reader = new FileReader(resourcesPath.resolve(EVENTS).toFile())) {
@@ -127,8 +129,10 @@ public class ServiceImportation {
                     statistiques.add(s);
                 }
 
+                String gameMode = jsonMap.getAsJsonObject("gameMode").get("name").getAsString();
+
                 // Crée l'objet
-                events.add(new Evenement(id, nom, dateDebut, dateFin, statistiques));
+                events.add(new Evenement(id, nom, dateDebut, dateFin, statistiques, gameMode, serviceDate));
 
             }
         } catch (IOException e) {

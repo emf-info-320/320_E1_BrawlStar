@@ -10,7 +10,6 @@ public class ServiceIndexation {
      * sont initialisé
      */
     public ServiceIndexation() {
-
     }
 
     /**
@@ -18,7 +17,6 @@ public class ServiceIndexation {
      * ici qu'il faut vider les différentes structures de données
      */
     public void avantIndexation() {
-
     }
 
     /**
@@ -29,7 +27,7 @@ public class ServiceIndexation {
      * @param elements La liste de tous les élément de jeu (Brawlers + Évènements)
      *                 en vrac
      */
-    public void indexation(ArrayList<ElementDeJeu> elements) {
+    public void indexation(List<ElementDeJeu> elements) {
 
     }
 
@@ -38,20 +36,27 @@ public class ServiceIndexation {
      * vous allez faire les dernier traitements sur vos structures de données.
      */
     public void apresIndexation() {
+    }
 
+    /**
+     * Méthode rapido qui répond à la question : "Quel est le nombre
+     * d'éléments de jeu qui ont été importés et indexés?".
+     * 
+     * @return Le nombre total d'éléments importés et indexés.
+     */
+    public int rapido0_NombreElements() {
     }
 
     /**
      * Méthode rapido qui doit répondre rapidement à la question "Lister tous les
-     * brawlers présents dans la liste"
-     * Cette liste doit être retournée par ordre de rareté de la moins rare à la
-     * plus rare, puis du nom alphabétiquement.
+     * brawlers présents dans la liste passée en paramètres"
+     * Cette liste doit être retournée sans doublons par ordre de rareté (id de la
+     * rareté) de la moins rare à la plus rare, puis du nom alphabétiquement.
      * 
      * @return La liste de tous les brawlers trié par rareté (id de la rareté)
      *         croissante puis du nom de manière alphabétique.
      */
-    public ArrayList<Brawler> rapido1_ListeBrawlers() {
-
+    public List<Brawler> rapido1_ListeBrawlers() {
     }
 
     /**
@@ -62,8 +67,7 @@ public class ServiceIndexation {
      * @return La liste de toutes les classes sans doublons et par ordre
      *         alphabétique.
      */
-    public ArrayList<String> rapido2_ListeDesClasses() {
-
+    public List<String> rapido2_ListeDesClasses() {
     }
 
     /**
@@ -74,8 +78,7 @@ public class ServiceIndexation {
      * @return La liste de tous les évènements dans l'ordre de la plus vieille date
      *         de début à la plus jeune date de début.
      */
-    public ArrayList<Evenement> rapido3_TousLesEvenements() {
-
+    public List<Evenement> rapido3_TousLesEvenements() {
     }
 
     /**
@@ -84,8 +87,7 @@ public class ServiceIndexation {
      * 
      * @return la liste des raretés, sans doublons, par ordre croissant de l'id
      */
-    public ArrayList<Rarete> getRapido4List_RareteDuBrawler() {
-
+    public List<Rarete> getRapido4List_RareteDuBrawler() {
     }
 
     /**
@@ -97,19 +99,20 @@ public class ServiceIndexation {
      * @return La liste de tous les brawlers de la rareté sélectionnée dans l'ordre
      *         alphabétique du nom du brawler.
      */
-    public ArrayList<Brawler> rapido4_brawlerParRarete(String nomDeLaRarete) {
-
+    public List<Brawler> rapido4_brawlerParRarete(String nomDeLaRarete) {
     }
 
     /**
-     * Méthode rapido qui doit répondre rapidement à la question "Quel brawler
-     * à le plus souvent plus de 50% de victoire". Il n'y a qu'un brawler qui
-     * correspond.
+     * Méthode rapido qui doit répondre rapidement à la question "Quel est le nombre
+     * d'évènement par mode de jeu".
+     * La liste doit être ordrée par le mode de jeu ayant le moins d'événements à
+     * celui qui en a le plus uniquement.
      * 
-     * @return Le brawler ayant le plus souvent plus de 50% de victoire.
+     * @return Une liste contenant des string représentant le nombre d'événement
+     *         pour ce mode de jeu suivi du texte " événement(s) pour le mode : ",
+     *         puis le mode de jeu.
      */
-    public Brawler rapido5_BrawlerPlus50Victoire() {
-
+    public List<String> rapido5_NombreEvenementParModeDeJeu() {
     }
 
 }
