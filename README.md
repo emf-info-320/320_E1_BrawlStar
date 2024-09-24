@@ -448,6 +448,15 @@ sequenceDiagram
     serviceIndexation-->>-indexer(): 
 ```
 
+#### Méthode `onRapido0Click()`
+```mermaid
+sequenceDiagram
+    onRapido0Click()->>+serviceIndexation:rapido0_NombreElements()
+    serviceIndexation-->>-onRapido0Click(): nombre
+
+    onRapido0Click()->>+view:afficheRapport(""+ nombre)
+```
+
 #### Méthode `onRapido1Click()`
 ```mermaid
 sequenceDiagram
