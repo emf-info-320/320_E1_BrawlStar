@@ -542,7 +542,7 @@ Voici le cahier des charge de cette méthode :
 Le constructeur doit initialiser les attributs de la classe. Et le pattern du formatage doit y être défini.
 
 Le formatage de la date doit être fait comme ceci :
-Le jour et le mois séparés par un "/" et sur 2 caractères. L'année qui est sur 4 caractères est aussi séparée du jour et du mois par un "/". Il faut mettre les heures et les minutes sur 2 caractères et ils sont séparés par ":". L'heure et la date sont entre parenthèses.
+Le jour et le mois séparés par un "/" et sur 2 caractères. L'année qui est sur 4 caractères est aussi séparée du jour et du mois par un "/". Il faut mettre les heures et les minutes sur 2 caractères et ils sont séparés par ":". Les heures et les minutes sont entre parenthèses.
 
 La méthode `formaterDate` doit recevoir une `Date` en paramètres. Si celle-ci est null alors la méthode doit retourner une chaîne de characters vide; sinon, elle retourne la date formatée.
 
