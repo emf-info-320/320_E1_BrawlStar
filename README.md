@@ -340,7 +340,7 @@ classDiagram
         +getDateDebut() Date
         +getDateFin() Date
         +getStatistiques() ArrayList < Statistique >
-        +getModeDeJeu String
+        +getModeDeJeu() String
         +compareTo(Evenement evenement) int
         +toString() String
     }
