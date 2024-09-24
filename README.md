@@ -514,7 +514,7 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     onRapido4Click(Rarete rarete)->>+serviceIndexation:rapido4_brawlerParRarete(rarete.getNom())
-    serviceIndexation-->>-onRapido4Click(Rarete rarete): brawlerDeLaRarete
+    serviceIndexation-->>-onRapido4Click(Rarete rarete): brawlersDeLaRarete
 
     onRapido4Click(Rarete rarete)->>onRapido4Click(Rarete rarete):String rapport = "";
 
