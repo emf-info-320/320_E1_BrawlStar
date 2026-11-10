@@ -386,10 +386,11 @@ Voici les indications manquantes qui vous permettront de terminer l'implémentat
 
 ```mermaid
 sequenceDiagram
+    create participant main as main()
     create participant Controller
-    main()->>Controller: <<creation>>
-    main()->>+Controller: start()
-    Controller-->>-main(): 
+    main ->>Controller: <<creation>>
+    main ->>+Controller: start()
+    Controller-->>-main: 
 ```
 
 ### Détail de la classe `Controller`
@@ -415,8 +416,9 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-    start()->>+view: start()
-    view-->>-start(): 
+    participant start as start()
+    start->>+view: start()
+    view-->>-start: 
 
 ```
 
@@ -424,89 +426,96 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-    importation()->>+elementsDeJeu:clear()
-    elementsDeJeu-->-importation():void
-    importation()->>+serviceImportation:importerBrawlers()
-    serviceImportation-->>-importation():brawlers
-    importation()->>+elementsDeJeu:addAll(brawlers)
-    importation()->>+serviceImportation:importerEvenements()
-    serviceImportation-->>-importation():evenements
-    importation()->>+elementsDeJeu:addAll(evenements)
+participant importation as importation()
+    importation->>+elementsDeJeu:clear()
+    elementsDeJeu-->-importation:void
+    importation->>+serviceImportation:importerBrawlers()
+    serviceImportation-->>-importation:brawlers
+    importation->>+elementsDeJeu:addAll(brawlers)
+    importation->>+serviceImportation:importerEvenements()
+    serviceImportation-->>-importation:evenements
+    importation->>+elementsDeJeu:addAll(evenements)
 
 ```
 
 #### Méthode `indexer()`
 ```mermaid
 sequenceDiagram
-    indexer()->>+serviceIndexation:avantIndexation()
-    serviceIndexation-->>-indexer(): 
+    participant indexer as indexer()
+    indexer->>+serviceIndexation:avantIndexation()
+    serviceIndexation-->>-indexer:
 
-    indexer()->>+serviceIndexation:indexation(elementsDeJeu)
-    serviceIndexation-->>-indexer(): 
+    indexer->>+serviceIndexation:indexation(elementsDeJeu)
+    serviceIndexation-->>-indexer: 
 
-    indexer()->>+serviceIndexation:apresIndexation()
-    serviceIndexation-->>-indexer(): 
+    indexer->>+serviceIndexation:apresIndexation()
+    serviceIndexation-->>-indexer: 
 ```
 
 #### Méthode `onRapido0Click()`
 ```mermaid
 sequenceDiagram
-    onRapido0Click()->>+serviceIndexation:rapido0_NombreElements()
-    serviceIndexation-->>-onRapido0Click(): nombre
+    participant onRapido0Click as onRapido0Click()
+    onRapido0Click->>+serviceIndexation:rapido0_NombreElements
+    serviceIndexation-->>-onRapido0Click: nombre
 
-    onRapido0Click()->>+view:afficheRapport(""+ nombre)
+    onRapido0Click->>+view:afficheRapport(""+ nombre)
 ```
 
 #### Méthode `onRapido1Click()`
 ```mermaid
 sequenceDiagram
-    onRapido1Click()->>+serviceIndexation:rapido1_ListeBrawlers()
-    serviceIndexation-->>-onRapido1Click(): brawlers
+    participant onRapido1Click as onRapido1Click()
+    onRapido1Click->>+serviceIndexation:rapido1_ListeBrawlers()
+    serviceIndexation-->>-onRapido1Click: brawlers
 
-    onRapido1Click()->>onRapido1Click():String rapport = "";
+    onRapido1Click->>onRapido1Click:String rapport = "";
 
     loop brawler in brawlers
-        onRapido1Click()->>onRapido1Click():rapport += brawler + "\n"
+        onRapido1Click->>onRapido1Click:rapport += brawler + "\n"
     end
 
-    onRapido1Click()->>+view:afficheRapport(rapport)
+    onRapido1Click->>+view:afficheRapport(rapport)
 ```
 
 #### Méthode `onRapido2Click()`
 ```mermaid
 sequenceDiagram
-    onRapido2Click()->>+serviceIndexation:rapido2_ListeDesClasses()
-    serviceIndexation-->>-onRapido2Click(): classes
+    participant onRapido2Click as onRapido2Click()
+    onRapido2Click->>+serviceIndexation:rapido2_ListeDesClasses()
+    serviceIndexation-->>-onRapido2Click: classes
 
-    onRapido2Click()->>onRapido2Click():String rapport = "";
+    onRapido2Click->>onRapido2Click:String rapport = "";
 
     loop classe in classes
-        onRapido2Click()->>onRapido2Click():rapport += classe + "\n"
+        onRapido2Click->>onRapido2Click:rapport += classe + "\n"
     end
 
-    onRapido2Click()->>+view:afficheRapport(rapport)
+    onRapido2Click->>+view:afficheRapport(rapport)
 ```
 
 #### Méthode `onRapido3Click()`
 ```mermaid
 sequenceDiagram
-    onRapido3Click()->>+serviceIndexation:rapido3_TousLesEvenements()
-    serviceIndexation-->>-onRapido3Click(): evenements
+    participant onRapido3Click as onRapido3Click()
+    onRapido3Click->>+serviceIndexation:rapido3_TousLesEvenements()
+    serviceIndexation-->>-onRapido3Click: evenements
 
-    onRapido3Click()->>onRapido3Click():String rapport = "";
+    onRapido3Click->>onRapido3Click:String rapport = "";
 
     loop evenement in evenements
-        onRapido3Click()->>onRapido3Click():rapport += evenement + "\n"
+        onRapido3Click->>onRapido3Click:rapport += evenement + "\n"
     end
 
-    onRapido3Click()->>+view:afficheRapport(rapport)
+    onRapido3Click->>+view:afficheRapport(rapport)
 ```
 
 #### Méthode `getRapido4List()`
 ```mermaid
 sequenceDiagram
-    getRapido4List()->>+serviceIndexation:getRapido4List_RareteDuBrawler()
-    serviceIndexation-->>-getRapido4List(): raretes
+    participant onRapido4List as onRapido4List()
+    getRapido4List->>+serviceIndexation:getRapido4List_RareteDuBrawler()
+    serviceIndexation-->>-getRapido4List: raretes
 
 ```
 
@@ -528,16 +537,17 @@ sequenceDiagram
 #### Méthode `onRapido5Click()`
 ```mermaid
 sequenceDiagram
-    onRapido5Click()->>+serviceIndexation:rapido5_NombreEvenementParModeDeJeu()
-    serviceIndexation-->>-onRapido5Click(): eventsParMode
+    participant onRapido5Click as onRapido5Click()
+    onRapido5Click->>+serviceIndexation:rapido5_NombreEvenementParModeDeJeu()
+    serviceIndexation-->>-onRapido5Click: eventsParMode
 
-    onRapido5Click()->>onRapido5Click():String eventParModeString = "";
+    onRapido5Click->>onRapido5Click:String eventParModeString = "";
 
     loop eventParMode in eventsParMode
-        onRapido5Click()->>onRapido5Click():eventParModeString += eventParMode + "\n"
+        onRapido5Click->>onRapido5Click:eventParModeString += eventParMode + "\n"
     end
 
-    onRapido5Click()->>+view:afficheRapport(eventParModeString)
+    onRapido5Click->>+view:afficheRapport(eventParModeString)
 ```
 
 ## Javadoc
